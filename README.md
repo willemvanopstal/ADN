@@ -9,9 +9,9 @@ The tool is built with Python 2.7 and GUI is done with PyQt4. Before you can use
 
 ## Settings
 
-''' 
-WMSADD;inspire.caris.nl/service
-WMSCAP;&thisandthis
-WFSADD;inspire.caris.nl/service
-WFSCAP;hdjdk
-'''
+'''   
+WMSADD;inspire.caris.nl/service  
+WMSCAP;&thisandthis  
+WFSADD;inspire.caris.nl/service  
+WFSCAP;hdjdk  
+'''  
