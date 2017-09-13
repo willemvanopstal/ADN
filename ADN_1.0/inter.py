@@ -3,7 +3,6 @@ from scipy.interpolate import griddata
 import scipy
 import scipy.misc
 from PIL import Image
-
 from pyproj import Proj, transform
 
 def toWGS(coord):
@@ -26,9 +25,7 @@ def saveImage(pointfile,xCells,yCells,arraying,xMin,xMax,yMin,yMax,NESW):
                 
     im_new.save('grids/{0}.png'.format(pointfile))
     '''
-    headerfile = 'charts/{0}_header.txt'.format(pointfile)
-    
-        
+    headerfile = 'charts/{0}_header.txt'.format(pointfile)  
     line_one = '! {0} from ADN for OCPN.\n'.format(pointfile)
     line_two = 'VER/2.0\n'
     line_three = 'BSB/NA={0}\n'.format(pointfile)
@@ -36,8 +33,6 @@ def saveImage(pointfile,xCells,yCells,arraying,xMin,xMax,yMin,yMax,NESW):
     line_five = 'KNP/SC=100000,GD=WGS84,PR=MERCATOR,PP=40\n'
     line_six = '\tPI=UNKNOWN,SP=UNKNOWN,SK=0.0,TA=90.0\n'
     line_seven = '\tUN=METERS,SD=UNKNOWN\n'
-    '''
-    #52,4
     print '3395',xMin,yMin
     (xMin,yMin) = toWGS((xMin,yMin))
     xMin = str(xMin)
@@ -48,17 +43,6 @@ def saveImage(pointfile,xCells,yCells,arraying,xMin,xMax,yMin,yMax,NESW):
     xMax = str(xMax)
     yMax = str(yMax)
     print 'wgs',xMax, yMax
-    
-    xMin = NESW[3]
-    xMax = NESW[1]
-    yMin = NESW[2]
-    yMax = NESW[0]
-    
-    dX = ((float(xMax)-float(xMin))*111120.0)/xCells
-    dY = ((float(yMax)-float(yMin))*111120.0)/yCells
-    dY=dX
-    '''
-    
     line_eight = '\tDX={0},DY={1}\n'.format(str(dX),str(dY))
     line_nine = 'OST/1\n'
     line_ten = 'REF/1, 1,{0}, {1},{2}\n'.format(yCells,yMin,xMin)
@@ -71,12 +55,20 @@ def saveImage(pointfile,xCells,yCells,arraying,xMin,xMax,yMin,yMax,NESW):
     line_sevent = 'PLY/3,{0},{1}\n'.format(yMax,xMax)
     line_eightt = 'PLY/4,{0},{1}\n'.format(yMin,xMax)
     line_ninet = 'DTM/0,0\n'
-    
     headerlines = line_one +line_two+line_three+line_four+line_five+line_six+line_seven+line_eight+line_nine+line_ten+line_eleven+line_twelve+line_thirt+line_fourt+line_fift+line_sixt+line_sevent+line_eightt+line_ninet
     print headerlines
     with open(headerfile,'w') as hyf:
         hyf.write(headerlines)
     '''    
+    xMin = NESW[3]
+    xMax = NESW[1]
+    yMin = NESW[2]
+    yMax = NESW[0]
+    
+    dX = ((float(xMax)-float(xMin))*111120.0)/xCells
+    dY = ((float(yMax)-float(yMin))*111120.0)/yCells
+    #dY=dX
+    
     ### write chartcal
     chartcal = '[{0}.PNG]\nNA={0}\nFN={0}.PNG\n'.format(pointfile)
     chartcal = chartcal + 'GR=0\nPY=1\nQU=0\nSC={0}\nBC=4\n'.format(int(dX*dY)*2000)
