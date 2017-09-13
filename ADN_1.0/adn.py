@@ -181,9 +181,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                     areaList.append(line.split(',')[0])
             
             self.hisAreaCombo.clear()
-            self.hisAreaCombo.addItems(areaList)
-                    
-
+            self.hisAreaCombo.addItems(areaList)            
         except:
             self.dataOutBox.append('\nHISTORY CONNECTION FAILED\nCheck your internet connection and the url')
             self.log('initial connection failed')
@@ -288,6 +286,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 newlist.append(item)
                 fh.write(item + "\n") 
         fh.close()
+	
+	self.populateDatasets()
            
     ############################################
     ##  Crreate Functions                     ##
@@ -426,9 +426,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         pixmap = QtGui.QPixmap(str(curImagePath) + "changes_{0}_{1}_{2}.png".format(selArea,dating,selTime))
         pixmap = pixmap.scaledToWidth(1000)
         self.testLbl.setPixmap(pixmap)
-        
-        
-        
+             
     ############################################
     ##  Download Service Functions            ##
     ############################################
