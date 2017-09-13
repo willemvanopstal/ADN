@@ -14,8 +14,7 @@ def toMercator(coord):
     (xOut, yOut) = transform(inProj, outProj, coord[0], coord[1])
     return (xOut, yOut)
 
-def requesting(lowerCorner, upperCorner, url, counterList, recCount = 0):
-    
+def requesting(lowerCorner, upperCorner, url, counterList, recCount = 0):    
     lowerPseudo = toPseudo(lowerCorner)
     upperPseudo = toPseudo(upperCorner)
                              
@@ -37,7 +36,7 @@ def requesting(lowerCorner, upperCorner, url, counterList, recCount = 0):
     #print counterList
 
     if counter == 100:
-        if recCount == 8:
+        if recCount == 20:
             print "MAX REC_DEPTH REACHED"
             return counterList
     
