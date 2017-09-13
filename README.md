@@ -3,5 +3,6 @@ GUI-tool for retrieving the latest bathymetric data in the Netherlands, and conv
 
 NB: This tool is still experimental, don't use it as your primary navigational source.
 
-#for more info:
+## for more info:
+
 adn.gitbooks.io/actuele-dieptes-nederland
