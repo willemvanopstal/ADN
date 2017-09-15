@@ -8,5 +8,5 @@ The tool is built with Python 2.7. Make sure to have the correct version install
 
 ## For more info:
 
-visit: [adn.gitbooks.io](https://adn.gitbooks.io/actuele-dieptes-nederland)
+visit: [adn.gitbooks.io](https://adn.gitbooks.io/actuele-dieptes-nederland)  
 support: [Zeilersforum.nl](https://www.zeilersforum.nl)
