@@ -1,7 +1,0 @@
-catalog;catalog.adn
-settings;settings.adn
-WMSADDRESS;https://inspire.caris.nl/server/services/ows/view/map/bathymetrie-noordzee_IVS
-WFSADDRESS;https://inspire.caris.nl/server/services/ows/download/feature/bathymetrie-noordzee_IDS
-WMSCAP;?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
-WFSCAP;?service=wfs&request=GetCapabilities
-HISADDRESS;https://raw.githubusercontent.com/willemvanopstal/ADN_history/master
