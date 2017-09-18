@@ -7,7 +7,6 @@ def install(package):
     except:
         print package, ' NOT installed'
 
-# Example
 if __name__ == '__main__':
     install('numpy')
     install('matplotlib')
